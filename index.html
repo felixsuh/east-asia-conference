@@ -30,13 +30,8 @@
               <a href="#participants">Participants</a>
             </div>
           </div>
-          <div class="nav-group">
-            <button class="nav-trigger" type="button" aria-expanded="false">Registration <span aria-hidden="true">↘</span></button>
-            <div class="nav-menu">
-              <a href="#registration">Registration Guide</a>
-              <a href="#directions">Directions</a>
-            </div>
-          </div>
+          <a class="nav-direct registration-link" data-registration-link href="#registration">Registration <span aria-hidden="true">↗</span></a>
+          <a class="nav-direct" href="#location">Location</a>
         </nav>
       </div>
     </header>
@@ -53,7 +48,7 @@
             </div>
             <div class="hero-actions">
               <a class="button button-dark" href="#schedule">View program <span aria-hidden="true">↘</span></a>
-              <a class="button button-outline" href="#registration">Registration <span aria-hidden="true">↘</span></a>
+              <a class="button button-outline registration-link" data-registration-link href="#registration">Registration <span aria-hidden="true">↗</span></a>
             </div>
           </div>
           <div class="bar-composition" aria-hidden="true">
@@ -102,11 +97,11 @@
       </section>
 
       <section class="registration section-pad section-lime" id="registration" aria-labelledby="registration-title">
-        <div class="wrap registration-layout"><div><p class="eyebrow">Registration</p><h2 id="registration-title">Join the workshop.</h2></div><div><p>Registration will be available through an online registration form.</p><button class="button button-dark disabled" type="button" disabled aria-describedby="registration-note">Register via Google Form <span aria-hidden="true">↗</span></button><p class="pending" id="registration-note">Registration details to be announced.</p></div></div>
+        <div class="wrap registration-layout"><div><p class="eyebrow">Registration</p><h2 id="registration-title">Join the workshop.</h2></div><div><p>Registration opens directly in the workshop's online form. It includes the essential event information before the application questions.</p><a class="button button-dark disabled registration-link" data-registration-link href="#registration" aria-describedby="registration-note">Register via Google Form <span aria-hidden="true">↗</span></a><p class="pending" id="registration-note">The registration form link will be announced shortly.</p></div></div>
       </section>
 
-      <section class="directions section-pad" id="directions" aria-labelledby="directions-title">
-        <div class="wrap directions-grid"><div><p class="eyebrow">Venue</p><h2 id="directions-title">Samick Hall</h2><p class="venue-line">Seoul National University Asia Center<br />(Building 101)<br />Seoul National University</p></div><div class="map-placeholder" role="img" aria-label="Map area reserved for final venue directions"><div class="map-grid" aria-hidden="true"></div><p>Map and directions<br />to be announced</p></div><div class="direction-notes"><div><span>01</span><h3>Getting there</h3><p>Transportation information to be announced.</p></div><div><span>02</span><h3>Access</h3><p>Parking and accessibility details to be announced.</p></div></div></div>
+      <section class="directions section-pad" id="location" aria-labelledby="location-title">
+        <div class="wrap directions-grid"><div><p class="eyebrow">Location</p><h2 id="location-title">Samick Hall</h2><p class="venue-line">Seoul National University Asia Center<br />(Building 101)<br />Seoul National University</p><a class="text-link map-link" href="https://www.google.com/maps/search/?api=1&amp;query=Samick%20Hall%2C%20Asia%20Center%2C%20Seoul%20National%20University" target="_blank" rel="noopener noreferrer">Open in Google Maps <span aria-hidden="true">↗</span></a></div><div class="map-placeholder" role="img" aria-label="Map link for Samick Hall at Seoul National University Asia Center"><div class="map-grid" aria-hidden="true"></div><p>Samick Hall<br />Asia Center</p></div><div class="direction-notes"><div><span>01</span><h3>Public transport</h3><p>Detailed transit guidance will be announced by the organizers.</p></div><div><span>02</span><h3>Access</h3><p>Parking and accessibility details will be announced by the organizers.</p></div></div></div>
       </section>
     </main>
 
@@ -114,7 +109,7 @@
 
     <dialog class="participant-dialog" id="participant-dialog" aria-labelledby="dialog-name">
       <button class="dialog-close" type="button" aria-label="Close participant details">×</button>
-      <div class="dialog-inner"><div class="portrait-placeholder large" aria-hidden="true"></div><div><p class="eyebrow" id="dialog-role"></p><h2 id="dialog-name"></h2><p class="dialog-affiliation" id="dialog-affiliation"></p><div class="dialog-presentation" id="dialog-presentation"></div><div class="dialog-bio"><h3>Biography</h3><p>Biography to be announced.</p></div></div></div>
+      <div class="dialog-inner"><div class="dialog-portrait" id="dialog-photo" aria-hidden="true"></div><div class="dialog-copy"><p class="eyebrow" id="dialog-role"></p><h2 id="dialog-name"></h2><p class="dialog-affiliation" id="dialog-affiliation"></p><div class="dialog-presentation" id="dialog-presentation"></div><div class="dialog-bio"><h3>Biography</h3><div class="dialog-bio-scroll" id="dialog-bio-text" tabindex="0"></div></div></div></div>
     </dialog>
     <script src="script.js"></script>
   </body>
