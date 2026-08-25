@@ -14,3 +14,29 @@
 @media (max-width:800px) { :root{--wrap:min(100% - 32px,1180px)} .section-pad{padding:75px 0}.header-inner{min-height:72px}.brand img:first-child{width:116px}.brand img:last-child{width:76px}.menu-toggle{display:block}.site-nav{display:none; position:absolute; top:72px; left:0; right:0; padding:10px 16px 16px; background:#fff; border-bottom:1px solid #000;}.site-nav.is-open{display:block}.nav-group{display:block}.nav-trigger,.nav-direct{display:flex;width:100%;justify-content:space-between;padding:15px 0}.nav-menu{display:none;position:static;visibility:visible;opacity:1;transform:none;box-shadow:none;border:0;padding:0 0 8px}.nav-group.open .nav-menu{display:block}.nav-menu a{padding:10px 16px;background:#f4f4f4;margin:2px 0}.hero{min-height:650px}.hero-layout{display:block;min-height:auto}.hero-copy{padding-top:55px}.bar-composition{position:relative;right:auto;top:auto;width:100%;height:205px;margin:40px 0 0;gap:8px}.bar-composition i{height:22px}.intro-grid,.registration-layout{grid-template-columns:1fr;gap:28px}.intro-body{font-size:18px}.dimensions{margin-top:60px}.participant-grid{grid-template-columns:repeat(2,1fr)}.schedule-item{grid-template-columns:115px 1fr;gap:15px}.schedule-detail{grid-column:2}.break .schedule-detail{grid-column:2}.schedule-item h3{font-size:27px}.preview-list>div{grid-template-columns:85px 1fr}.preview-list p{grid-column:2}.preview-list strong{grid-column:2}.directions-grid{grid-template-columns:1fr}.direction-notes{margin-top:10px}.dialog-inner{grid-template-columns:1fr;height:auto;padding:62px 28px 35px;gap:28px}.dialog-portrait .portrait,.dialog-portrait .portrait-placeholder{width:120px}.participant-dialog h2{font-size:46px} }
 @media (max-width:520px) { h1{font-size:52px}.section-heading{display:block;margin-bottom:36px}.section-heading .date-note,.section-heading .text-link{display:inline-block;margin-top:15px}.hero-actions .button{width:100%}.dimensions{grid-template-columns:1fr}.dimensions article,.dimensions article+article{min-height:auto;padding:22px 0;border-right:0;border-bottom:1px solid var(--black)}.dimensions article:last-child{border-bottom:0}.dimensions span{margin-bottom:24px}.preview-list>div{grid-template-columns:70px 1fr;padding:17px 0}.schedule-item{display:block;padding:23px 0}.schedule-item time{display:block;margin-bottom:12px}.schedule-detail{margin-top:15px}.break .schedule-detail{margin-top:0}.participant-grid{grid-template-columns:1fr}.participant-card{min-height:205px}.portrait-placeholder{margin-bottom:27px}.direction-notes{grid-template-columns:1fr}.direction-notes>div+div{padding:24px 0 0;border-left:0;border-top:1px solid var(--black)}.direction-notes>div{padding:24px 0 0}.direction-notes span{margin-bottom:20px}.footer-inner{display:block}.footer-inner p+p{margin-top:9px}.dialog-inner{padding:55px 24px 30px}.participant-dialog{width:100vw;max-height:100vh;height:100vh}.participant-dialog h2{font-size:42px} }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
+
+/* Participant portraits: unified large rectangular treatment. */
+.participant-grid--keynote { max-width:none; }
+.participant-card { display:flex; flex-direction:column; min-height:430px; }
+.participant-card > .portrait,
+.participant-card > .portrait-placeholder { width:100%; height:auto; aspect-ratio:4 / 5; margin:0 0 26px; border-radius:0; object-fit:cover; object-position:center top; }
+.participant-card > .card-role { margin-top:auto; padding-top:18px; }
+.participant-dialog { width:min(980px, calc(100vw - 32px)); }
+.dialog-inner { grid-template-columns:235px minmax(0,1fr); gap:45px; padding:58px; }
+.dialog-portrait .portrait,
+.dialog-portrait .portrait-placeholder { width:235px; height:auto; aspect-ratio:4 / 5; margin:0; border-radius:0; object-fit:cover; object-position:center top; }
+
+@media (max-width:800px) {
+  .participant-card { min-height:0; }
+  .dialog-inner { grid-template-columns:180px minmax(0,1fr); padding:54px 32px 34px; gap:30px; }
+  .dialog-portrait .portrait,
+  .dialog-portrait .portrait-placeholder { width:180px; aspect-ratio:4 / 5; }
+}
+
+@media (max-width:520px) {
+  .participant-card > .portrait,
+  .participant-card > .portrait-placeholder { margin-bottom:22px; }
+  .dialog-inner { grid-template-columns:1fr; padding:55px 24px 30px; }
+  .dialog-portrait .portrait,
+  .dialog-portrait .portrait-placeholder { width:min(100%, 220px); aspect-ratio:4 / 5; }
+}
